@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Untuk menampilkan selamat datang
 Route::get('/', function () {
-    return view('welcome');
+    echo "Selamat Datang";
+});
+
+// Menampilkan data diri
+Route::get('/about', function () {
+    $tampil = "";
+    $tampil .= "<p>NIM : 1941720168</p>";
+    $tampil .= "<p>Nama : Oudessya Balqist Wibowo</p>";
+    $tampil .= "<p>Kelas : TI-2A</p>";
+    echo $tampil;
+});
+
+Route::get('articles/{id}', function ($id) {
+    echo "Halaman artikel dengan id " . $id;
 });
